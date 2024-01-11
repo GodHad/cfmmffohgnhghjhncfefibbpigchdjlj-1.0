@@ -1,0 +1,68 @@
+{
+    "manifest_version": 2,
+    "name": "CrmWhatsPro",
+    "description": "CrmWhatsPro",
+    "version": "0.0.4.5",
+    "author": "CrmWhatsPro",
+    "icons": {
+        "16": "assets/images/16x16.png",
+        "32": "assets/images/32x32.png",
+        "48": "assets/images/48x48.png",
+        "128": "assets/images/128x128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "assets/images/16x16.png",
+            "32": "assets/images/32x32.png",
+            "48": "assets/images/48x48.png",
+            "128": "assets/images/128x128.png"
+        },
+        "default_title": "CrmWhatsPro"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://apiexpress.crmwhatspro.com/*"
+            ],
+            "js": [
+                "updateChecker.js"
+            ]
+        },
+        {
+            "matches": [
+                "https://web.whatsapp.com/*"
+            ],
+            "js": [
+                "appendAssets.js",
+                "fetchWebsocket.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+     "web_accessible_resources": [
+        "eventListener.js",
+        "assets/js/jquery.min.js",
+        "assets/js/bootstrap.bundle.min.js",
+        "assets/js/sweetAlert.js",
+        "assets/js/dragula.js",
+        "assets/js/dom-autoscroller.js",
+        "assets/js/chartjs.min.js",
+        "assets/js/core.js",
+        "assets/js/gridjs.production.min.js",
+        "assets/css/mermaid.min.css",
+        "assets/css/dragula.css",
+        "assets/css/animate.min.css",
+        "assets/css/bootstrap.min.css",
+        "assets/css/core.css"
+    ],
+    "permissions": [
+        "storage",
+        "tabs",
+        "*://*.whatsapp.com/*",
+        "*://*.crmwhatspro.com/*"
+    ]
+}

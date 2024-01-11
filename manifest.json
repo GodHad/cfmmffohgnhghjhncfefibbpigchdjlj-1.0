@@ -1,0 +1,39 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "assets/images/128x128.png",
+         "16": "assets/images/16x16.png",
+         "32": "assets/images/32x32.png",
+         "48": "assets/images/48x48.png"
+      },
+      "default_title": "CrmWhatsPro"
+   },
+   "author": "CrmWhatsPro",
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "js": [ "updateChecker.js" ],
+      "matches": [ "https://apiexpress.crmwhatspro.com/*" ]
+   }, {
+      "js": [ "appendAssets.js", "fetchWebsocket.js" ],
+      "matches": [ "https://web.whatsapp.com/*" ]
+   } ],
+   "description": "CrmWhatsPro",
+   "icons": {
+      "128": "assets/images/128x128.png",
+      "16": "assets/images/16x16.png",
+      "32": "assets/images/32x32.png",
+      "48": "assets/images/48x48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2Yw1as83g+4tSI54Hsso1hsbrdQckce2LLpTKiRgi/8eXQBXtTCWMGchgrpfhsmVCO2f7fcEp+ZjsiLQI17GJRKzSFKNwsHiRyt7BS5DmR+0snKbWICwRT+MPzbMlE95TyZfmdLiO19BZYjYeBN/1YRt076o/ZOm+h9OpOeBk33Yqao890yizb+W0K/pcvXHpRc88+gvpddtN/rCc4BIls2U5wUuh5YVLX6+RZqIBVwYxHZVYNIDY5SL8EFWjyXpr61b6/Caos1cph1Bqkj9beKJF+PyqbmSGRA3awt4zrGCWvKrl5Ai27AZIvAtcbX8SLQ4g3JYFydxisp2qmtzoQIDAQAB",
+   "manifest_version": 3,
+   "name": "CrmWhatsPro",
+   "permissions": [ "storage", "tabs" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.0.8.9",
+   "web_accessible_resources": [ {
+      "matches": [ "https://web.whatsapp.com/*" ],
+      "resources": [ "eventListener.js", "assets/js/jquery.min.js", "assets/js/bootstrap.bundle.min.js", "assets/js/sweetAlert.js", "assets/js/dragula.js", "assets/js/dom-autoscroller.js", "assets/js/chartjs.min.js", "assets/js/core.js", "assets/js/gridjs.production.min.js", "assets/css/mermaid.min.css", "assets/css/dragula.css", "assets/css/animate.min.css", "assets/css/bootstrap.min.css", "assets/css/core.css" ]
+   } ]
+}
